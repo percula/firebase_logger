@@ -9,7 +9,7 @@ environment:
 dependencies:
   logger: #'>1.1.0 <2.0.0'
     git: https://github.com/percula/logger.git
-  firebase_crashlytics: '>=2.5.0 <3.0.0'
+  firebase_crashlytics: '>=2.5.0 <4.0.0'
 
 dev_dependencies:
   lints: ^1.0.0
