@@ -1,16 +1,11 @@
 name: firebase_logger
 description: An extension for logger that logs to Firebase Crashlytics
 version: 1.0.0
+repository: https://github.com/percula/firebase_logger
 
 environment:
-  sdk: '>=2.16.2 <3.0.0'
-
+  sdk: '>=2.16.2 <4.0.0'
 
 dependencies:
-  logger: #'>1.1.0 <2.0.0'
-    git: https://github.com/percula/logger.git
+  logger: '>=2.1.0 <3.0.0'
   firebase_crashlytics: '>=2.5.0 <4.0.0'
-
-dev_dependencies:
-  lints: ^1.0.0
-  test: ^1.16.0

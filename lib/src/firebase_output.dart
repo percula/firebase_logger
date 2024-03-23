@@ -2,6 +2,8 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:logger/logger.dart';
 
 class FirebaseOutput extends LogOutput {
+
+  /// Which log [Level]s to send to Firebase
   List<Level> levels;
 
   FirebaseOutput({
@@ -11,13 +13,13 @@ class FirebaseOutput extends LogOutput {
   @override
   void output(OutputEvent event) {
     if (levels.contains(event.level)) {
-      if (event.error != null || event.stackTrace != null) {
+      if (event.origin.error != null || event.origin.stackTrace != null) {
         FirebaseCrashlytics.instance.recordError(
-            event.error,
-            event.stackTrace,
-            reason: event.message);
+            event.origin.error,
+            event.origin.stackTrace,
+            reason: event.origin.message);
       } else {
-        FirebaseCrashlytics.instance.log(event.message);
+        FirebaseCrashlytics.instance.log(event.origin.message);
       }
     }
   }
