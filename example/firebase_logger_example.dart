@@ -14,7 +14,7 @@ void main() {
   try {
     final myList = [];
     final thisWillNotWork = myList[42];
-  } on Exception catch (e) {
-    logger.e("Uh oh", e);
+  } on Exception catch (e, stackTrace) {
+    logger.e("Uh oh", error: e, stackTrace: stackTrace);
   }
 }
